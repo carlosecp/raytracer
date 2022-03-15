@@ -13,16 +13,16 @@ impl fmt::Debug for Projectile {
                 "position",
                 &format_args!(
                     "{{ x: {:.2}, y: {:.2} }}",
-                    self.position.get_coord_x(),
-                    self.position.get_coord_y()
+                    self.position.x(),
+                    self.position.y()
                 ),
             )
             .field(
                 "velocity",
                 &format_args!(
                     "{{ x: {:.2}, y: {:.2} }}",
-                    self.velocity.get_coord_x(),
-                    self.velocity.get_coord_y()
+                    self.velocity.x(),
+                    self.velocity.y()
                 ),
             )
             .finish()
@@ -53,7 +53,7 @@ fn main() {
 
     let mut ticks = 0;
 
-    while proj.position.get_coord_y() >= 0. {
+    while proj.position.y() >= 0. {
         ticks += 1;
 
         println!("{:?}", proj);

@@ -1,13 +1,13 @@
 use std::ops::{Add, Div, Mul, Neg, Sub};
 
 #[derive(Copy, Clone, Debug)]
-pub struct Tuple(f64, f64, f64);
+pub struct Tuple(pub f64, pub f64, pub f64);
 
 impl Tuple {
     pub fn new(a: f64, b: f64, c: f64) -> Self {
         Tuple(a, b, c)
     }
-    
+
     pub fn values(&self) -> [f64; 3] {
         [self.0, self.1, self.2]
     }
@@ -34,6 +34,14 @@ impl Div<f64> for Tuple {
 
     fn div(self, factor: f64) -> Self::Output {
         Tuple::new(self.0 / factor, self.1 / factor, self.2 / factor)
+    }
+}
+
+impl Mul for Tuple {
+    type Output = Self;
+
+    fn mul(self, other: Self) -> Self::Output {
+        Tuple::new(self.0 * other.0, self.1 * other.1, self.2 * other.2)
     }
 }
 

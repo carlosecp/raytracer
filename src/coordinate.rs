@@ -60,15 +60,15 @@ impl Point {
         Point(Coordinate::new(x, y, z, 1.))
     }
 
-    pub fn get_coord_x(&self) -> f64 {
+    pub fn x(&self) -> f64 {
         self.0.tuple.values()[0]
     }
 
-    pub fn get_coord_y(&self) -> f64 {
+    pub fn y(&self) -> f64 {
         self.0.tuple.values()[1]
     }
 
-    pub fn get_coord_z(&self) -> f64 {
+    pub fn z(&self) -> f64 {
         self.0.tuple.values()[2]
     }
 }
@@ -173,15 +173,15 @@ impl Vector {
         })
     }
 
-    pub fn get_coord_x(&self) -> f64 {
+    pub fn x(&self) -> f64 {
         self.0.tuple.values()[0]
     }
 
-    pub fn get_coord_y(&self) -> f64 {
+    pub fn y(&self) -> f64 {
         self.0.tuple.values()[1]
     }
 
-    pub fn get_coord_z(&self) -> f64 {
+    pub fn z(&self) -> f64 {
         self.0.tuple.values()[2]
     }
 }
